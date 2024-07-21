@@ -27,6 +27,7 @@ public class ShopTypeController {
 
     @GetMapping("list")
     public Result queryTypeList() {
+        //TODO redis实现
         List<ShopType> typeList = typeService
                 .query().orderByAsc("sort").list();
         return Result.ok(typeList);
